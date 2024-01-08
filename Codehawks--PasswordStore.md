@@ -1,6 +1,12 @@
-# Cyfrin -- Password Store Security Review
+# Codehawks/Cyfrin -- Password Store Security Review
 
-## [H-1] Storing the password on-chain makes it visible to anyone, and no longer private
+- [Codehawks/Cyfrin -- Password Store Security Review](#codehawkscyfrin----password-store-security-review)
+    - [\[H-1\] Storing the password on-chain makes it visible to anyone, and no longer private](#h-1-storing-the-password-on-chain-makes-it-visible-to-anyone-and-no-longer-private)
+    - [\[H-2\] `PasswordStore::setPassword` has no access controls, meaning a non-owner can change the password](#h-2-passwordstoresetpassword-has-no-access-controls-meaning-a-non-owner-can-change-the-password)
+    - [\[I-1\] The `PasswordStore::getPassword` natspec indicates a parameter that doesn't exist](#i-1-the-passwordstoregetpassword-natspec-indicates-a-parameter-that-doesnt-exist)
+
+
+### [H-1] Storing the password on-chain makes it visible to anyone, and no longer private
 
 **Description:** All data stored on-chain is visible to anyone, and can be read directly from the blockchain. The `PasswordStore::s_password` variable is intended to be a private variable and only accessed through the `PasswordStore::getPassword` function, which is intended to be only called by the owner of the contract.
 
@@ -52,7 +58,7 @@ myPassword
 
 **Recommended Mitigation:** Due to this, the overall architecture of the contract should be rethought. One could encrypt the password off-chain and then store the encrypted password on-chain. This would require the user to remember another password off-chain to decrypt the password. However, you'd also likely want to remove the view function as you wouldn't want the user to accidentally send a transaction with the password that decrypts your password.
 
-## [H-2] `PasswordStore::setPassword` has no access controls, meaning a non-owner can change the password
+### [H-2] `PasswordStore::setPassword` has no access controls, meaning a non-owner can change the password
 
 **Description:** The `Password::setPassword` function is set to be an `external` function. The natspec of the function and overall purpose of the smart contract is that `This function allows only the owner to set a new password.`
 
@@ -94,7 +100,7 @@ myPassword
     }
 ```
 
-## [I-1] The `PasswordStore::getPassword` natspec indicates a parameter that doesn't exist
+### [I-1] The `PasswordStore::getPassword` natspec indicates a parameter that doesn't exist
 
 **Description:**
 
