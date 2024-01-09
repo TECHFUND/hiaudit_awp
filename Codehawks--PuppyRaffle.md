@@ -18,7 +18,7 @@
   - [Informational](#informational)
     - [\[I-1\] Solidity pragma should be specific, not wide](#i-1-solidity-pragma-should-be-specific-not-wide)
     - [\[I-2\] Using an outdated version of Solidity is not recommended](#i-2-using-an-outdated-version-of-solidity-is-not-recommended)
-    - [\[I-3\] ### NC-1: Missing checks for `address(0)` when assigning values to address state variables](#i-3--nc-1-missing-checks-for-address0-when-assigning-values-to-address-state-variables)
+    - [\[I-3\] Missing checks for `address(0)` when assigning values to address state variables](#i-3-missing-checks-for-address0-when-assigning-values-to-address-state-variables)
     - [\[I-4\] `PuppyRaffle::selectWinner` does not follow CEI (Checks, Effects, Interactions).](#i-4-puppyraffleselectwinner-does-not-follow-cei-checks-effects-interactions)
     - [\[I-5\] Magic Numbers](#i-5-magic-numbers)
     - [\[I-6\] `PuppyRaffle::_isActivePlayer` is never used and should be removed](#i-6-puppyraffle_isactiveplayer-is-never-used-and-should-be-removed)
@@ -564,7 +564,7 @@ The recommendation take into account:
 
 Please see [slither](https://github.com/crytic/slither/wiki/Detector-Documentation#incorrect-versions-of-solidity) documentation for more information.
 
-### [I-3] ### NC-1: Missing checks for `address(0)` when assigning values to address state variables
+### [I-3] Missing checks for `address(0)` when assigning values to address state variables
 
 Assigning values to address state variables without checking for `address(0)`.
 
