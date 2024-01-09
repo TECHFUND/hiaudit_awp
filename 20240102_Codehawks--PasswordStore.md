@@ -1,10 +1,39 @@
 # Codehawks/Cyfrin -- Password Store Security Review
 
+## ToC
+
 - [Codehawks/Cyfrin -- Password Store Security Review](#codehawkscyfrin----password-store-security-review)
+  - [ToC](#toc)
+  - [Risk Classification](#risk-classification)
+  - [Summary](#summary)
+  - [High](#high)
     - [\[H-1\] Storing the password on-chain makes it visible to anyone, and no longer private](#h-1-storing-the-password-on-chain-makes-it-visible-to-anyone-and-no-longer-private)
     - [\[H-2\] `PasswordStore::setPassword` has no access controls, meaning a non-owner can change the password](#h-2-passwordstoresetpassword-has-no-access-controls-meaning-a-non-owner-can-change-the-password)
+  - [Informational](#informational)
     - [\[I-1\] The `PasswordStore::getPassword` natspec indicates a parameter that doesn't exist](#i-1-the-passwordstoregetpassword-natspec-indicates-a-parameter-that-doesnt-exist)
 
+## Risk Classification
+
+|            |        | Impact |        |     |
+| ---------- | ------ | ------ | ------ | --- |
+|            |        | High   | Medium | Low |
+|            | High   | H      | H/M    | M   |
+| Likelihood | Medium | H/M    | M      | M/L |
+|            | Low    | M      | M/L    | L   |
+
+## Summary
+
+| Severity      | Issues Found |
+| ------------- | ------------ |
+| High          | 2            |
+| Medium        | 0            |
+| Low           | 0            |
+| Gas           | 0            |
+| Informational | 1            |
+| Total         | 3            |
+
+
+## High
 
 ### [H-1] Storing the password on-chain makes it visible to anyone, and no longer private
 
@@ -99,6 +128,8 @@ myPassword
         revert PasswordStore__NotOwner();
     }
 ```
+
+## Informational
 
 ### [I-1] The `PasswordStore::getPassword` natspec indicates a parameter that doesn't exist
 

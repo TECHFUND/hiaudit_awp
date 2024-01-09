@@ -1,6 +1,11 @@
 # Codehawks/Cyfrin -- PuppyRaffle Security Review
 
+## ToC
+
 - [Codehawks/Cyfrin -- PuppyRaffle Security Review](#codehawkscyfrin----puppyraffle-security-review)
+  - [ToC](#toc)
+  - [Risk Classification](#risk-classification)
+  - [Summary](#summary)
   - [High](#high)
     - [\[H-1\] Reentrancy attack in `PuppyRaffle::refund` allows entrant to drain raffle balance](#h-1-reentrancy-attack-in-puppyrafflerefund-allows-entrant-to-drain-raffle-balance)
     - [\[H-2\] Weak Randomness in `PuppyRaffle::selectWinner` allows users to influence or predict the winner and influence or predict the winning puppy](#h-2-weak-randomness-in-puppyraffleselectwinner-allows-users-to-influence-or-predict-the-winner-and-influence-or-predict-the-winning-puppy)
@@ -23,7 +28,25 @@
     - [\[I-5\] Magic Numbers](#i-5-magic-numbers)
     - [\[I-6\] `PuppyRaffle::_isActivePlayer` is never used and should be removed](#i-6-puppyraffle_isactiveplayer-is-never-used-and-should-be-removed)
 
+## Risk Classification
 
+|            |        | Impact |        |     |
+| ---------- | ------ | ------ | ------ | --- |
+|            |        | High   | Medium | Low |
+|            | High   | H      | H/M    | M   |
+| Likelihood | Medium | H/M    | M      | M/L |
+|            | Low    | M      | M/L    | L   |
+
+## Summary
+
+| Severity      | Issues Found |
+| ------------- | ------------ |
+| High          | 3            |
+| Medium        | 4            |
+| Low           | 1            |
+| Gas           | 2            |
+| Informational | 6            |
+| Total         | 16           |
 
 ## High
 
