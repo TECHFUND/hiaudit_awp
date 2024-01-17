@@ -1,8 +1,8 @@
-# Codehawks/Cyfrin -- TSwap (Modified for of UniswapV1) Security Review
+# Codehawks/Cyfrin -- TSwap (Modified fork of UniswapV1) Security Review
 
 ## ToC
 
-- [Codehawks/Cyfrin -- TSwap (Modified for of UniswapV1) Security Review](#codehawkscyfrin----tswap-modified-for-of-uniswapv1-security-review)
+- [Codehawks/Cyfrin -- TSwap (Modified fork of UniswapV1) Security Review](#codehawkscyfrin----tswap-modified-fork-of-uniswapv1-security-review)
   - [ToC](#toc)
   - [Risk Classification](#risk-classification)
   - [Summary](#summary)
